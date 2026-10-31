@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MindMetrics</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Top navigation -->
+  <header class="navbar">
+    <div class="container navbar-inner">
+      <a href="#overview" class="logo">MindMetrics</a>
+      <nav>
+        <a href="#overview">Overview</a>
+        <a href="#assessment">Assessment</a>
+        <a href="#how">How it works</a>
+        <a href="#about">About</a>
+      </nav>
+      <a href="#assessment" class="btn btn-primary">Start Assessment</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section id="overview" class="hero">
+      <div class="container">
+        <h1>Understand Your Digital Wellbeing</h1>
+        <p class="subtitle">
+          MindMetrics uses a machine learning model to estimate a mental-health-related score
+          from your sleep, physical activity, study hours, stress, and social media usage.
+        </p>
+        <a href="#assessment" class="btn btn-primary">Start Assessment</a>
+        <a href="#how" class="btn btn-outline">How It Works</a>
+        <ul class="badges"><li>12 inputs</li><li>Machine learning model</li><li>Instant result</li></ul>
+      </div>
+    </section>
+
+    <!-- Assessment form -->
+    <section id="assessment" class="section">
+      <div class="container container-wide">
+        <h2>Assessment</h2>
+        <p class="muted">All fields are required. Your score appears on the right.</p>
+
+        <div class="layout">
+          <!-- LEFT: the form -->
+          <div class="form-col">
+            <form id="assessment-form" novalidate>
+
+          <div class="card">
+            <h3>Personal Information</h3>
+            <div class="grid">
+              <div class="field">
+                <label for="Age">Age</label>
+                <input type="number" id="Age" min="10" max="100" step="1">
+                <span class="error" id="error-Age"></span>
+              </div>
+              <div class="field">
+                <label for="Gender">Gender</label>
+                <select id="Gender">
+                  <option value="">Select...</option>
+                  <option value="Male">Male</option>
+                  <option value="Female">Female</option>
+                </select>
+                <span class="error" id="error-Gender"></span>
+              </div>
+              <div class="field">
+                <label for="Country">Country</label>
+                <input type="text" id="Country" list="country-list" placeholder="Start typing...">
+                <datalist id="country-list">
+                  <option value="India"><option value="USA"><option value="Canada">
+                  <option value="Australia"><option value="UK"><option value="Germany">
+                  <option value="Mexico"><option value="Turkey"><option value="France">
+                  <option value="Other">
+                </datalist>
+                <span class="hint">Pick from the list or type your own.</span>
+                <span class="error" id="error-Country"></span>
+              </div>
+              <div class="field">
+                <label for="Academic_Level">Academic Level</label>
+                <select id="Academic_Level">
+                  <option value="">Select...</option>
+                  <option value="High School">High School</option>
+                  <option value="Undergraduate">Undergraduate</option>
+                  <option value="Graduate">Graduate</option>
+                </select>
+                <span class="error" id="error-Academic_Level"></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <h3>Digital Lifestyle</h3>
+            <div class="grid">
+              <div class="field">
+                <label for="Most_Used_Platform">Most Used Platform</label>
+                <select id="Most_Used_Platform">
+                  <option value="">Select...</option>
+                  <option value="Facebook">Facebook</option>
+                  <option value="LinkedIn">LinkedIn</option>
+                  <option value="Instagram">Instagram</option>
+                  <option value="Snapchat">Snapchat</option>
+                  <option value="Twitter">Twitter</option>
+                  <option value="YouTube">YouTube</option>
+                  <option value="TikTok">TikTok</option>
+                  <option value="LINE">LINE</option>
+                  <option value="KakaoTalk">KakaoTalk</option>
+                  <option value="VKontakte">VKontakte</option>
+                  <option value="WhatsApp">WhatsApp</option>
+                  <option value="WeChat">WeChat</option>
+                </select>
+                <span class="error" id="error-Most_Used_Platform"></span>
+              </div>
+              <div class="field">
+                <label for="Purpose_Of_Use">Purpose of Use</label>
+                <select id="Purpose_Of_Use">
+                  <option value="">Select...</option>
+                  <option value="Networking">Networking</option>
+                  <option value="Education">Education</option>
+                  <option value="Entertainment">Entertainment</option>
+                  <option value="News">News</option>
+                </select>
+                <span class="error" id="error-Purpose_Of_Use"></span>
+              </div>
+              <div class="field">
+                <label for="Avg_Daily_Usage_Hours">Daily Usage (hours)</label>
+                <input type="number" id="Avg_Daily_Usage_Hours" min="0" max="24" step="0.5">
+                <span class="hint">Between 0 and 24.</span>
+                <span class="error" id="error-Avg_Daily_Usage_Hours"></span>
+              </div>
+              <div class="field">
+                <label for="Daily_Unlocks">Daily Phone Unlocks</label>
+                <input type="number" id="Daily_Unlocks" min="0" step="1">
+                <span class="hint">Whole number, 0 or more.</span>
+                <span class="error" id="error-Daily_Unlocks"></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <h3>Health &amp; Daily Routine</h3>
+            <div class="grid">
+              <div class="field">
+                <label for="Study_Hours">Study Hours (per day)</label>
+                <input type="number" id="Study_Hours" min="0" max="24" step="0.5">
+                <span class="error" id="error-Study_Hours"></span>
+              </div>
+              <div class="field">
+                <label for="Physical_Activity_Hours">Physical Activity (hours per day)</label>
+                <input type="number" id="Physical_Activity_Hours" min="0" max="24" step="0.5">
+                <span class="error" id="error-Physical_Activity_Hours"></span>
+              </div>
+              <div class="field">
+                <label for="Sleep_Hours_Per_Night">Sleep (hours per night)</label>
+                <input type="number" id="Sleep_Hours_Per_Night" min="0" max="24" step="0.5">
+                <span class="error" id="error-Sleep_Hours_Per_Night"></span>
+              </div>
+              <div class="field full">
+                <label id="stress-label">Stress Level</label>
+                <!-- Hidden input holds the chosen value; the buttons below set it -->
+                <input type="hidden" id="Stress_Level">
+                <div class="segmented" role="group" aria-labelledby="stress-label">
+                  <button type="button" data-value="Low" aria-pressed="false">Low</button>
+                  <button type="button" data-value="Medium" aria-pressed="false">Medium</button>
+                  <button type="button" data-value="High" aria-pressed="false">High</button>
+                  <button type="button" data-value="Very High" aria-pressed="false">Very High</button>
+                </div>
+                <span class="error" id="error-Stress_Level"></span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Shows API / network errors -->
+          <p id="form-error" class="alert" hidden></p>
+
+          <button type="submit" id="submit-btn" class="btn btn-primary">Get Predicted Score</button>
+          <button type="button" id="reset-btn" class="btn btn-outline">Reset</button>
+        </form>
+          </div>
+
+          <!-- RIGHT: result panel (stays in view while you scroll).
+               Only one of the three boxes below is visible at a time. -->
+          <aside id="result-panel" class="result-panel" aria-live="polite">
+            <p class="panel-title">Predicted Mental Health Score</p>
+
+            <div id="empty-state">
+              <p class="panel-big">&ndash;</p>
+              <p class="panel-text">Fill in the form and submit. Your score will show here.</p>
+            </div>
+
+            <div id="loading-state" hidden>
+              <div class="dots"><i></i><i></i><i></i></div>
+              <p class="panel-text">Running the model...</p>
+            </div>
+
+            <div id="result-state" hidden>
+              <div class="score-ring"><p id="score" class="score-number"></p></div>
+              <p class="panel-text">
+                A machine learning estimate based only on the answers you submitted.
+                The scale and meaning of this score are not defined here, so this is not a
+                diagnosis or medical advice.
+              </p>
+              <details>
+                <summary>View Assessment Details</summary>
+                <ul id="details-list"></ul>
+              </details>
+              <button type="button" id="again-btn" class="btn btn-light">Take Another Assessment</button>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- How it works -->
+    <section id="how" class="section">
+      <div class="container">
+        <h2>How It Works</h2>
+        <div class="grid grid-3">
+          <div class="card"><h3>1. Your answers</h3><p class="muted">You fill in 12 questions about your habits and routine.</p></div>
+          <div class="card"><h3>2. The ML model</h3><p class="muted">The answers are sent to a trained model running on the backend.</p></div>
+          <div class="card"><h3>3. Predicted score</h3><p class="muted">The model returns one number, shown exactly as predicted.</p></div>
+        </div>
+
+        <div class="grid grid-3 spaced">
+          <div class="card"><h3>Digital Habits</h3><p class="muted">Platform, purpose, daily hours, phone unlocks.</p></div>
+          <div class="card"><h3>Daily Routine</h3><p class="muted">Study, sleep, and physical activity.</p></div>
+          <div class="card"><h3>Lifestyle Factors</h3><p class="muted">Age, academic level, country, stress.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="section section-alt">
+      <div class="container">
+        <h2>About This Model</h2>
+        <p class="muted narrow">
+          MindMetrics is a demonstration of a machine learning model that predicts a numeric
+          mental-health-related score from self-reported inputs. Predictions may be wrong for
+          any individual. It is not a medical tool. If you are worried about your wellbeing,
+          please speak to a qualified professional.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>Disclaimer: MindMetrics gives an informational estimate only. It is not a diagnosis or a substitute for professional care.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
