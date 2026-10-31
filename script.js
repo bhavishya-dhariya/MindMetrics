@@ -11,7 +11,7 @@
 // =====================================================================
 
 // Change this one line when you deploy the backend somewhere else.
-const API_BASE_URL = "http://127.0.0.1:8000";
+const API_BASE_URL = "https://mindmetrics-1-6xtc.onrender.com";
 
 // Field names must match the FastAPI model exactly (same capital letters).
 const NUMBER_FIELDS = {
